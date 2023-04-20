@@ -15,12 +15,21 @@ namespace GameSix
         /// <param name="name"> Name of the Foe </param>
         public Foe(string name)
         {
-            this.name = name;
+            SetName(name);
             health = 100;
             shield = 100;
         }
 
         public string GetName() => name;
+
+        public float GetHealth() => health;
+
+        public float GetShield() => shield;
+
+        public void SetName(string name)
+        {
+            this.name = name;
+        }
 
         public void TakeDamage(float damage)
         {
@@ -28,7 +37,7 @@ namespace GameSix
 
             if (shield < 0)
             {
-                
+
                 float damageStillToInflict = -shield;
                 shield = 0;
                 health -= damageStillToInflict;
@@ -36,5 +45,7 @@ namespace GameSix
                 if (health < 0 ) health = 0;
             }
         }
+
+        
     }
 }
