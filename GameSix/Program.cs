@@ -6,7 +6,13 @@ namespace GameSix
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Foe Loki = new Foe("Loki");
+
+            Console.WriteLine(Loki.GetName());
+
+            Loki.SetName("   Grindalokki  ");
+
+            Console.WriteLine(Loki.GetName());
         }
     }
 }

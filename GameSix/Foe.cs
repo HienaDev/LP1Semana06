@@ -1,4 +1,4 @@
-
+using System;
 
 namespace GameSix
 {
@@ -28,6 +28,7 @@ namespace GameSix
 
         public void SetName(string name)
         {
+            name = name.Trim(' ');
             this.name = name;
         }
 
