@@ -5,6 +5,7 @@ namespace GameSix
     public class Foe
     {
 
+        private static int powerUpsUsed;
         private string name;
         private float health;
         private float shield;
@@ -20,6 +21,11 @@ namespace GameSix
             shield = 55;
         }
 
+        static Foe()
+        {
+            powerUpsUsed = 0;
+        }
+
         public string GetName() => name;
 
         public float GetHealth() => health;
@@ -31,6 +37,8 @@ namespace GameSix
             name = name.Trim(' ');
             this.name = name;
         }
+
+        public static int GetPowerUpsUsed() => powerUpsUsed;
 
         public void TakeDamage(float damage)
         {
@@ -59,6 +67,8 @@ namespace GameSix
                 shield *= number;
                 if (shield > 100) shield = 100;
             }
+
+            powerUpsUsed += 1;
         }
         
     }
