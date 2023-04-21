@@ -57,6 +57,8 @@ namespace GameSix
                 Console.WriteLine(enemy.GetShield());
                 Console.WriteLine();
             }
+
+            Console.WriteLine("“Merci d’utiliser ce programme!");
         }
     }
 }
