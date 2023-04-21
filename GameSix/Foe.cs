@@ -16,8 +16,8 @@ namespace GameSix
         public Foe(string name)
         {
             SetName(name);
-            health = 100;
-            shield = 100;
+            health = 40;
+            shield = 55;
         }
 
         public string GetName() => name;
@@ -47,6 +47,19 @@ namespace GameSix
             }
         }
 
+        public void PickupPowerUp(PowerUp power, float number)
+        {
+            if (power == PowerUp.Health)
+            {
+                health *= number;
+                if (health > 100) health = 100;
+            }
+            else if (power == PowerUp.Shield)
+            {
+                shield *= number;
+                if (shield > 100) shield = 100;
+            }
+        }
         
     }
 }
