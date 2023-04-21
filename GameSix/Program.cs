@@ -22,28 +22,33 @@ namespace GameSix
                 foes[i] = new Foe(name);
             }
 
+            // Gets amount of powerups used and prints it
             int powerUpUsed = Foe.GetPowerUpsUsed();
             Console.WriteLine(powerUpUsed);
 
+            // Changes health of every foe
             foes[0].PickupPowerUp(PowerUp.Health, 0);
             foes[1].PickupPowerUp(PowerUp.Health, 1);
             foes[2].PickupPowerUp(PowerUp.Health, 2);
             foes[3].PickupPowerUp(PowerUp.Health, 3);
 
+            // Gets amount of powerups used and prints it
             powerUpUsed = Foe.GetPowerUpsUsed();
             Console.WriteLine(powerUpUsed);
 
+            // Changes shield of every foe
             foes[0].PickupPowerUp(PowerUp.Shield, 0);
             foes[1].PickupPowerUp(PowerUp.Shield, 1);
             foes[2].PickupPowerUp(PowerUp.Shield, 2);
             foes[3].PickupPowerUp(PowerUp.Shield, 3);
 
+            // Gets amount of powerups used and prints it
             powerUpUsed = Foe.GetPowerUpsUsed();
             Console.WriteLine(powerUpUsed);
 
             Console.WriteLine();
 
-            // Print name of every foe
+            // Print name health and shield of every foe
             foreach (Foe enemy in foes)
             {
                 

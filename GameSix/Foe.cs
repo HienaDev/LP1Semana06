@@ -21,25 +21,52 @@ namespace GameSix
             shield = 55;
         }
 
+        /// <summary>
+        /// Initalizes static variables
+        /// </summary>
         static Foe()
         {
             powerUpsUsed = 0;
         }
-
+        
+        /// <summary>
+        /// Returns name of instance Foe
+        /// </summary>
+        /// <returns></returns>
         public string GetName() => name;
 
+        /// <summary>
+        /// Returns health of instance Foe
+        /// </summary>
+        /// <returns></returns>
         public float GetHealth() => health;
 
+        /// <summary>
+        /// Returns shield of instance Foe
+        /// </summary>
+        /// <returns></returns>
         public float GetShield() => shield;
 
+        /// <summary>
+        /// Changes name of instance Foe
+        /// </summary>
+        /// <param name="name"> New name for foe </param>
         public void SetName(string name)
         {
             name = name.Trim(' ');
             this.name = name;
         }
-
+        
+        /// <summary>
+        /// Returns how many times power ups were used
+        /// </summary>
+        /// <returns></returns>
         public static int GetPowerUpsUsed() => powerUpsUsed;
 
+        /// <summary>
+        /// Deals damage to foe
+        /// </summary>
+        /// <param name="damage"> damage to be dealt to foe </param>
         public void TakeDamage(float damage)
         {
             shield -= damage;
@@ -55,6 +82,12 @@ namespace GameSix
             }
         }
 
+        /// <summary>
+        /// Increases parameter "power" by the float number but it
+        /// never goes above 100
+        /// </summary>
+        /// <param name="power"> Health or Shield</param>
+        /// <param name="number"> numer to be multiplied by </param>
         public void PickupPowerUp(PowerUp power, float number)
         {
             if (power == PowerUp.Health)
